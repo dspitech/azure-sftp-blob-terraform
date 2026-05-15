@@ -1,4 +1,4 @@
-# 🔐 SFTP Natif Azure — Blob Storage + Firewall + Private Endpoint
+# SFTP Natif Azure — Blob Storage + Firewall + Private Endpoint
 
 ![Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-0089D6?style=flat&logo=microsoftazure)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?style=flat&logo=terraform)
@@ -22,21 +22,21 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 ---
 
 ## Table des matières
-
+ 
 - [Architecture](#-architecture)
 - [Prérequis](#-prérequis)
 - [Structure du projet](#-structure-du-projet)
 - [Déploiement pas-à-pas](#-déploiement-pas-à-pas)
-  - [Étape 1 - Ouvrir Azure Cloud Shell](#étape-1--ouvrir-azure-cloud-shell)
-  - [Étape 2 - Récupérer les fichiers Terraform](#étape-2--récupérer-les-fichiers-terraform)
-  - [Étape 3 - Personnaliser les variables](#étape-3--personnaliser-les-variables)
-  - [Étape 4 - Vérifier la disponibilité des noms](#étape-4--vérifier-la-disponibilité-des-noms-azure)
-  - [Étape 5 - Initialiser Terraform](#étape-5--initialiser-terraform)
-  - [Étape 6 - Formater et valider le code](#étape-6--formater-et-valider-le-code)
-  - [Étape 7 - Vérifier le plan de déploiement](#étape-7--vérifier-le-plan-de-déploiement)
-  - [Étape 8 - Appliquer le déploiement](#étape-8--appliquer-le-déploiement)
-  - [Étape 9 - Récupérer les outputs](#étape-9--récupérer-les-outputs)
-  - [Étape 10 - Récupérer le mot de passe SFTP](#étape-10--récupérer-le-mot-de-passe-sftp)
+  - [Étape 1 — Ouvrir Azure Cloud Shell](#étape-1--ouvrir-azure-cloud-shell)
+  - [Étape 2 — Récupérer les fichiers Terraform](#étape-2--récupérer-les-fichiers-terraform)
+  - [Étape 3 — Personnaliser les variables](#étape-3--personnaliser-les-variables)
+  - [Étape 4 — Vérifier la disponibilité des noms](#étape-4--vérifier-la-disponibilité-des-noms-azure)
+  - [Étape 5 — Initialiser Terraform](#étape-5--initialiser-terraform)
+  - [Étape 6 — Formater et valider le code](#étape-6--formater-et-valider-le-code)
+  - [Étape 7 — Vérifier le plan de déploiement](#étape-7--vérifier-le-plan-de-déploiement)
+  - [Étape 8 — Appliquer le déploiement](#étape-8--appliquer-le-déploiement)
+  - [Étape 9 — Récupérer les outputs](#étape-9--récupérer-les-outputs)
+  - [Étape 10 — Récupérer le mot de passe SFTP](#étape-10--récupérer-le-mot-de-passe-sftp)
 - [Ressources déployées](#-ressources-déployées)
 - [Configuration détaillée](#-configuration-détaillée)
 - [Test de connexion SFTP](#-test-de-connexion-sftp)
@@ -44,7 +44,6 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 - [Bonnes pratiques de sécurité](#-bonnes-pratiques-de-sécurité)
 - [Nettoyage](#-nettoyage)
 - [Référence](#-référence)
-
 ---
 
 ## Architecture
