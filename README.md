@@ -27,7 +27,7 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 - [Prérequis](#-prérequis)
 - [Structure du projet](#-structure-du-projet)
 - [Déploiement pas-à-pas](#-déploiement-pas-à-pas)
-  - [Étape 1 — Ouvrir Azure Cloud Shell](#étape-1--ouvrir-azure-cloud-shell)
+  - [Étape 1 - Ouvrir Azure Cloud Shell](#étape-1--ouvrir-azure-cloud-shell)
   - [Étape 2 — Récupérer les fichiers Terraform](#étape-2--récupérer-les-fichiers-terraform)
   - [Étape 3 — Personnaliser les variables](#étape-3--personnaliser-les-variables)
   - [Étape 4 — Vérifier la disponibilité des noms](#étape-4--vérifier-la-disponibilité-des-noms-azure)
