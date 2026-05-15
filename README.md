@@ -10,8 +10,8 @@
 ![Lab](https://img.shields.io/badge/Type-Lab_Personnel-brightgreen?style=flat)
 
 Ce lab est basé sur l'architecture proposée par **PHIL_IT** sur YouTube.  
-## Chaîne : [youtube.com/@phil_it](https://www.youtube.com/@phil_it)  
-## Vidéo du tuto : [Azure SFTP natif sur Blob Storage](https://www.youtube.com/watch?v=5uoyecoJCZ4&t=312s)
+Chaîne : [youtube.com/@phil_it](https://www.youtube.com/@phil_it)  
+Vidéo du tuto : [Azure SFTP natif sur Blob Storage](https://www.youtube.com/watch?v=5uoyecoJCZ4&t=312s)
 
 ---
 
@@ -22,28 +22,29 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 ---
 
 ## Table des matières
- 
-- [Architecture](#-architecture)
-- [Prérequis](#-prérequis)
-- [Structure du projet](#-structure-du-projet)
-- [Déploiement pas-à-pas](#-déploiement-pas-à-pas)
-  - [Étape 1 - Ouvrir Azure Cloud Shell](#étape-1--ouvrir-azure-cloud-shell)
-  - [Étape 2 — Récupérer les fichiers Terraform](#étape-2--récupérer-les-fichiers-terraform)
-  - [Étape 3 — Personnaliser les variables](#étape-3--personnaliser-les-variables)
-  - [Étape 4 — Vérifier la disponibilité des noms](#étape-4--vérifier-la-disponibilité-des-noms-azure)
-  - [Étape 5 — Initialiser Terraform](#étape-5--initialiser-terraform)
-  - [Étape 6 — Formater et valider le code](#étape-6--formater-et-valider-le-code)
-  - [Étape 7 — Vérifier le plan de déploiement](#étape-7--vérifier-le-plan-de-déploiement)
-  - [Étape 8 — Appliquer le déploiement](#étape-8--appliquer-le-déploiement)
-  - [Étape 9 — Récupérer les outputs](#étape-9--récupérer-les-outputs)
-  - [Étape 10 — Récupérer le mot de passe SFTP](#étape-10--récupérer-le-mot-de-passe-sftp)
-- [Ressources déployées](#-ressources-déployées)
-- [Configuration détaillée](#-configuration-détaillée)
-- [Test de connexion SFTP](#-test-de-connexion-sftp)
-- [Outputs Terraform](#-outputs-terraform)
-- [Bonnes pratiques de sécurité](#-bonnes-pratiques-de-sécurité)
-- [Nettoyage](#-nettoyage)
-- [Référence](#-référence)
+
+- [Architecture](#architecture)
+- [Prérequis](#prérequis)
+- [Structure du projet](#structure-du-projet)
+- [Déploiement pas-à-pas](#déploiement-pas-à-pas)
+  - [Étape 1 - Ouvrir Azure Cloud Shell](#étape-1---ouvrir-azure-cloud-shell)
+  - [Étape 2 - Récupérer les fichiers Terraform](#étape-2---récupérer-les-fichiers-terraform)
+  - [Étape 3 - Personnaliser les variables](#étape-3---personnaliser-les-variables)
+  - [Étape 4 - Vérifier la disponibilité des noms](#étape-4---vérifier-la-disponibilité-des-noms-azure)
+  - [Étape 5 - Initialiser Terraform](#étape-5---initialiser-terraform)
+  - [Étape 6 - Formater et valider le code](#étape-6---formater-et-valider-le-code)
+  - [Étape 7 - Vérifier le plan de déploiement](#étape-7---vérifier-le-plan-de-déploiement)
+  - [Étape 8 - Appliquer le déploiement](#étape-8---appliquer-le-déploiement)
+  - [Étape 9 - Récupérer les outputs](#étape-9---récupérer-les-outputs)
+  - [Étape 10 - Récupérer le mot de passe SFTP](#étape-10---récupérer-le-mot-de-passe-sftp)
+- [Ressources déployées](#ressources-déployées)
+- [Configuration détaillée](#configuration-détaillée)
+- [Test de connexion SFTP](#test-de-connexion-sftp)
+- [Outputs Terraform](#outputs-terraform)
+- [Bonnes pratiques de sécurité](#bonnes-pratiques-de-sécurité)
+- [Nettoyage](#nettoyage)
+- [Référence](#référence)
+
 ---
 
 ## Architecture
@@ -136,7 +137,7 @@ Copiez chaque fichier `.tf` dans ce répertoire via l'éditeur Cloud Shell ou `n
 nano terraform.tfvars
 ```
 
->  **Important** : Le nom du `storage_account_name` doit être **globalement unique** sur Azure (3-24 caractères, minuscules et chiffres uniquement). Changez `sftpdemopp` par un nom unique.
+> **Important** : Le nom du `storage_account_name` doit être **globalement unique** sur Azure (3-24 caractères, minuscules et chiffres uniquement). Changez `sftpdemopp` par un nom unique.
 
 ```hcl
 # Exemple de personnalisation minimale
@@ -154,7 +155,7 @@ chmod +x check-names.sh
 ./check-names.sh
 ```
 
-> Par exemple, si un ❌ apparaît sur le Storage Account, modifiez `storage_account_name` dans `terraform.tfvars` et relancez le script jusqu'à obtenir tous les ✅.
+> Par exemple, si le nom le Storage Account, modifiez `storage_account_name` dans `terraform.tfvars` et relancez le script jusqu'à ça soit disponible.
 
 ### Étape 5 - Initialiser Terraform
 
@@ -213,7 +214,7 @@ Confirmez avec `yes` si vous n'avez pas utilisé `-out=tfplan`, ou lancez direct
 terraform apply -auto-approve
 ```
 
->  **Durée estimée** : 10 à 20 minutes (le déploiement du Firewall Standard est le plus long ~8-12 min)
+> **Durée estimée** : 10 à 20 minutes (le déploiement du Firewall Standard est le plus long ~8-12 min)
 
 ### Étape 9 - Récupérer les outputs
 
@@ -305,7 +306,7 @@ Accès autorisé  : Via Private Endpoint uniquement
 
 ---
 
-##  Test de connexion SFTP
+## Test de connexion SFTP
 
 ### Depuis un client Linux/macOS
 
@@ -396,15 +397,15 @@ terraform destroy -auto-approve
 
 ## Référence
 
--  [Vidéo du Lab original](https://www.youtube.com/watch?v=5uoyecoJCZ4)
--  [Documentation Azure — SFTP sur Blob Storage](https://learn.microsoft.com/fr-fr/azure/storage/blobs/secure-file-transfer-protocol-support)
--  [Documentation Azure Firewall DNAT](https://learn.microsoft.com/fr-fr/azure/firewall/tutorial-firewall-dnat)
--  [Documentation Private Endpoint](https://learn.microsoft.com/fr-fr/azure/private-link/private-endpoint-overview)
--  [Provider Terraform AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Vidéo du Lab original](https://www.youtube.com/watch?v=5uoyecoJCZ4)
+- [Documentation Azure — SFTP sur Blob Storage](https://learn.microsoft.com/fr-fr/azure/storage/blobs/secure-file-transfer-protocol-support)
+- [Documentation Azure Firewall DNAT](https://learn.microsoft.com/fr-fr/azure/firewall/tutorial-firewall-dnat)
+- [Documentation Private Endpoint](https://learn.microsoft.com/fr-fr/azure/private-link/private-endpoint-overview)
+- [Provider Terraform AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 
 ---
 
-##  Notes
+## Notes
 
 - Le **Firewall Standard** génère des coûts significatifs (~1,25 €/heure). Pensez à détruire l'infra après les tests.
 - Le nom du **Storage Account** doit être modifié — `sftpdemopp` est pris dans le lab d'origine.
