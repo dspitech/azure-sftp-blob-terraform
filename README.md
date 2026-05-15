@@ -1,4 +1,4 @@
-# SFTP Natif Azure — Blob Storage + Firewall + Private Endpoint
+# SFTP Natif Azure - Blob Storage + Firewall + Private Endpoint
 
 ![Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-0089D6?style=flat&logo=microsoftazure)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?style=flat&logo=terraform)
