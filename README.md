@@ -49,28 +49,7 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 
 ## Architecture
 
-```
-                         ┌─────────────────────────────────────────────┐
-                         │         Azure Virtual Network                │
-                         │              10.0.0.0/16                     │
-                         │                                              │
-   Client externe        │  ┌──────────────────────┐                   │
-   (protocole SFTP) ─────►  │    Azure Firewall     │                   │
-   TCP port 22           │  │  AzureFirewallSubnet  │                   │
-                         │  │    10.0.1.0/26        │                   │
-                         │  │   (IP pub: DNAT→:22)  │                   │
-                         │  └──────────┬────────────┘                   │
-                         │             │ DNAT TCP:22                    │
-                         │             ▼                                 │
-                         │  ┌──────────────────────┐   ┌─────────────┐ │
-                         │  │   Private Endpoint    │──►│   Storage   │ │
-                         │  │   10.0.2.10 / TCP:22  │   │   Account   │ │
-                         │  │  Workload SN subnet   │   │  (SFTP ON)  │ │
-                         │  │    10.0.2.0/24        │   │  Container  │ │
-                         │  └──────────────────────┘   │    "ftp"    │ │
-                         │                              └─────────────┘ │
-                         └─────────────────────────────────────────────┘
-```
+![Arcjitetcure SFTP sur Azure Storage](Images/Architecture.png)
 
 **Flux réseau :**  
 `Client → IP publique Firewall:22 → DNAT → Private Endpoint IP:22 → Storage Account SFTP`
