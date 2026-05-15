@@ -216,18 +216,6 @@ Le mot de passe est généré par Azure. Pour le récupérer depuis le portail :
 3. Cliquez sur `...` à côté de votre utilisateur → **Generate password**
 4. Copiez et sauvegardez le mot de passe (il n'est affiché qu'une seule fois)
 
-Ou via Azure CLI :
-
-```bash
-STORAGE_ACCOUNT=$(terraform output -raw storage_account_name)
-RG=$(terraform output -raw resource_group_name)
-
-az storage account local-user regenerate-password \
-  --account-name $STORAGE_ACCOUNT \
-  --resource-group $RG \
-  --name test
-```
-
 ---
 
 ## Ressources déployées
