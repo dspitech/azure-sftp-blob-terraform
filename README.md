@@ -330,8 +330,6 @@ Test-NetConnection -ComputerName <IP_PUBLIQUE_FIREWALL> -Port 22
 
 ## Bonnes pratiques de sécurité
 
-### À faire
-
 - **Préférer SSH Key pair** à SSH Password pour les utilisateurs SFTP en production
 - **Restreindre la source** dans la règle DNAT (remplacer `*` par les IPs de confiance)
 - **Activer les logs** du Firewall vers un Log Analytics Workspace
