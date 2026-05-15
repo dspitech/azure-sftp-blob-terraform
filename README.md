@@ -122,8 +122,8 @@ az account show
 
 ```bash
 # Option A — Cloner depuis Git (si vous avez pushé le projet)
-git clone https://github.com/<votre-org>/sftp-azure-terraform.git
-cd sftp-azure-terraform
+git clone https://github.com/dspitech/azure-sftp-blob-terraform.git
+cd azure-sftp-blob-terraform
 
 # Option B — Créer manuellement le répertoire
 mkdir sftp-azure-terraform && cd sftp-azure-terraform
