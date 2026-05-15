@@ -373,7 +373,7 @@ terraform destroy -auto-approve
 ## Notes
 
 - Le **Firewall Standard** génère des coûts significatifs (~1,25 €/heure). Pensez à détruire l'infra après les tests.
-- Le nom du **Storage Account** doit être modifié — `sftpdemopp` est pris dans le lab d'origine.
+- Le nom du **Storage Account** doit être modifié  - `sftpdemopp` est pris dans le lab d'origine.
 - Le **mot de passe** de l'utilisateur SFTP est généré par Azure et récupérable une seule fois via le portail ou l'API.
 - Le déploiement d'un Azure Firewall peut prendre **8 à 12 minutes**.
 
