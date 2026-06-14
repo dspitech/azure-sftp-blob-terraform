@@ -49,7 +49,7 @@ L'objectif est de déployer un serveur SFTP **sans VM à maintenir**, en s'appuy
 
 ## Architecture
 
-![Arcjitetcure SFTP sur Azure Storage](Images/Architecture.png)
+![image](https://hackmd.io/_uploads/ByFHbHhbfl.png)
 
 **Flux réseau :**  
 `Client → IP publique Firewall:22 → DNAT → Private Endpoint IP:22 → Storage Account SFTP`
