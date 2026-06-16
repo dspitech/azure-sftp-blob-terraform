@@ -1,5 +1,7 @@
 # SFTP Natif Azure - Blob Storage + Firewall + Private Endpoint
 
+### Nom : Lo | Prénom : Pape | Email : pape.lo@estiam.com
+
 ![Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-0089D6?style=flat&logo=microsoftazure)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?style=flat&logo=terraform)
 ![SFTP](https://img.shields.io/badge/Protocol-SFTP-00897B?style=flat&logo=files)
@@ -223,8 +225,8 @@ Le mot de passe est généré par Azure. Pour le récupérer depuis le portail :
 |---|---|---|
 | Resource Group | `RG-DEMO-ATT` | Conteneur de toutes les ressources |
 | Virtual Network | `vnet-prod-fr-sftp` | Réseau virtuel `10.0.0.0/16` |
-| Subnet Firewall | `AzureFirewallSubnet` | `10.0.1.0/26` — réservé au Firewall |
-| Subnet PE | `privateendpoint` | `10.0.2.0/24` — Private Endpoint |
+| Subnet Firewall | `AzureFirewallSubnet` | `10.0.1.0/26` - réservé au Firewall |
+| Subnet PE | `privateendpoint` | `10.0.2.0/24` - Private Endpoint |
 | IP publique | `public-ip-azfw` | IP statique Standard du Firewall |
 | Azure Firewall | `vnet-prod-fr-Firewall` | SKU Standard, avec Firewall Policy |
 | Firewall Policy | `fw-policy-sftp` | Policy + règle DNAT |
@@ -274,23 +276,6 @@ Accès autorisé  : Via Private Endpoint uniquement
 
 ## Test de connexion SFTP
 
-### Depuis un client Linux/macOS
-
-```bash
-# Récupérer la commande de connexion depuis les outputs
-terraform output sftp_connection_string
-
-# Connexion (username format : <storage_account>.<local_user>)
-sftp sftpdemopp.test@<IP_PUBLIQUE_FIREWALL>
-
-# Saisir le mot de passe quand demandé
-# Commandes SFTP de base :
-sftp> ls              # Lister les fichiers
-sftp> put fichier.txt # Uploader un fichier
-sftp> get fichier.txt # Télécharger un fichier
-sftp> exit            # Se déconnecter
-```
-
 ### Depuis Windows (WinSCP ou FileZilla)
 
 ```
@@ -304,8 +289,6 @@ Mot de passe: <mot_de_passe_généré>
 ### Vérification de la connectivité
 
 ```bash
-# Tester la connectivité TCP sur le port 22
-nc -zv <IP_PUBLIQUE_FIREWALL> 22
 
 # Ou depuis PowerShell
 Test-NetConnection -ComputerName <IP_PUBLIQUE_FIREWALL> -Port 22
@@ -362,7 +345,7 @@ terraform destroy -auto-approve
 ## Référence
 
 - [Vidéo du Lab original](https://www.youtube.com/watch?v=5uoyecoJCZ4)
-- [Documentation Azure — SFTP sur Blob Storage](https://learn.microsoft.com/fr-fr/azure/storage/blobs/secure-file-transfer-protocol-support)
+- [Documentation Azure - SFTP sur Blob Storage](https://learn.microsoft.com/fr-fr/azure/storage/blobs/secure-file-transfer-protocol-support)
 - [Documentation Azure Firewall DNAT](https://learn.microsoft.com/fr-fr/azure/firewall/tutorial-firewall-dnat)
 - [Documentation Private Endpoint](https://learn.microsoft.com/fr-fr/azure/private-link/private-endpoint-overview)
 - [Provider Terraform AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
