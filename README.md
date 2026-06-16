@@ -10,8 +10,7 @@
 ![Lab](https://img.shields.io/badge/Type-Lab_Personnel-brightgreen?style=flat)
 
 Ce lab est basé sur l'architecture proposée par **PHIL_IT** sur YouTube.  
-Chaîne : [youtube.com/@phil_it](https://www.youtube.com/@phil_it)  
-Vidéo du tuto : [Azure SFTP natif sur Blob Storage](https://www.youtube.com/watch?v=5uoyecoJCZ4&t=312s)
+Source : [Azure SFTP natif sur Blob Storage](https://www.youtube.com/watch?v=5uoyecoJCZ4&t=312s)
 
 ---
 
